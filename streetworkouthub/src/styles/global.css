@@ -1,0 +1,99 @@
+:root {
+  --bg-dark: #111418;
+  --bg-card: #1a1d23;
+  --neon: #00ffbf;
+  --text-main: #e8fdfd;
+}
+
+
+body {
+  background: #0d0f12;
+  color: var(--text-main);
+  font-family: Arial, sans-serif;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* .neon-btn {
+  border: 2px solid var(--neon);
+  color: var(--neon);
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: 0.25s;
+} */
+
+/* .neon-btn:hover {
+  background: var(--neon);
+  color: #000;
+  box-shadow: 0 0 10px var(--neon);
+} */
+
+/* .neon-btn {
+  background: rgba(0,255,191,0.18);
+  border: 2px solid var(--neon);
+  color: var(--neon);
+  font-weight: 600;
+} */
+
+.neon-btn {
+  background: rgba(0,255,191,0.18);
+  border: 2px solid var(--neon);
+  color: var(--neon);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.neon-btn:hover {
+  background: var(--neon);
+  color: #000;
+  transform: scale(1.04);
+  box-shadow: 0 0 20px var(--neon);
+}
+
+.card {
+  /* background-color: #111; */
+  background: var(--bg-card);
+  color: #fff;
+  /* border: 1px solid #e63946; */
+  border: 1px solid rgba(-0,255,191,0.4);
+  border-radius: 10px;
+  padding: 12px;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(0,255,191,0.4);
+}
+
+/* Accent Neon Border */
+.accent-box {
+  border: 2px solid rgba(255, 0, 72, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 72, 0.5);
+}
+
+/* Apply to footer */
+footer {
+  /* border-top: 2px solid rgba(255, 0, 72, 0.8); */
+  border-top: 2px solid rgba(-0,255,191,0.4);
+  box-shadow: 0 0 12px rgba(255, 0, 72, 0.5);
+  background: white;
+}
+
+
