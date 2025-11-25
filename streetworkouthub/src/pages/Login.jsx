@@ -13,6 +13,11 @@ export default function Login() {
     const email = formData.get("email");
     const password = formData.get("password");
 
+    if (!email || !password) {
+    setError("Fields cannot be empty");
+    return;
+  }
+
     try {
       await login(email, password);
       navigate("/");
