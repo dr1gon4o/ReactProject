@@ -1,16 +1,22 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom"; // <-- wrap your component
 import Login from "../pages/Login";
+import userEvent from "@testing-library/user-event";
 
-test("Login shows error if fields are empty", () => {
-  render(
-    <MemoryRouter>
-      <Login />
-    </MemoryRouter>
-  );
+vi.mock("../contexts/AuthContext", () => ({
+  useAuth: () => ({
+    login: vi.fn((email, password) => {
+      if (!email || !password) {
+        return Promise.reject(new Error("Fields cannot be empty"));
+      }
+      return Promise.resolve();
+    }),
+  }),
+}));
 
-  const loginButton = screen.getByRole("button", { name: /login/i });
-  fireEvent.click(loginButton);
-
-  expect(screen.getByText(/all fields are required/i)).toBeInTheDocument();
+test("shows error if fields are empty", async () => {
+  render(<Login />);
+  await userEvent.click(screen.getByRole("button", { name: /login/i }));
+  expect(await screen.findByText("Fields cannot be empty")).toBeInTheDocument();
 });
+
