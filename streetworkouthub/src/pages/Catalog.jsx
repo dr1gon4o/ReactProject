@@ -10,12 +10,11 @@ export default function Catalog() {
   useEffect(() => {
     postService.getAll()
       .then(data => {
-        // Ensure we always have an array
         setPosts(Array.isArray(data) ? data : []);
       })
       .catch(err => {
         console.error("Failed to fetch posts:", err);
-        setError("Failed to load posts.");
+        setError("Failed to load posts. No Posts found.");
         setPosts([]);
       })
       .finally(() => setLoading(false));

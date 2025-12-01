@@ -26,7 +26,6 @@ function App() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/posts/:id" element={<Details />} />
 
-          {/* Public only when logged out */}
           <Route
             path="/login"
             element={
@@ -45,7 +44,6 @@ function App() {
             }
           />
 
-          {/* Private only when logged in */}
           <Route
             path="/create"
             element={
@@ -73,7 +71,6 @@ function App() {
             }
           />
 
-          {/* Catch all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
 

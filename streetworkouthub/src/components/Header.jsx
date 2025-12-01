@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { FaDumbbell, FaSignInAlt, FaSignOutAlt, FaUserPlus, FaPlusCircle } from "react-icons/fa";
+import { FaFire, FaDumbbell, FaSignInAlt, FaSignOutAlt, FaUserPlus, FaPlusCircle } from "react-icons/fa";
 
 export default function Header() {
   const { isAuthenticated, logout, userEmail } = useAuth();
@@ -14,7 +14,11 @@ export default function Header() {
         </Link>
 
         <ul className="navbar-nav ms-auto gap-3">
-          <li className="nav-item"><Link className="nav-link" to="/catalog">Catalog</Link></li>
+          
+          <li className="nav-item"><Link className="nav-link" to="/catalog">
+            <FaFire className="me-1 text-danger" />Catalog
+            </Link>
+          </li>
 
           {isAuthenticated ? (
             <>
@@ -25,7 +29,7 @@ export default function Header() {
               </li>      
               <li className="nav-item">
                 <Link className="nav-link" to="/profile">
-                <FaUserPlus className="me-1 text-success" />Profile{userEmail}
+                <FaUserPlus className="me-1 text-success" /> Profile{userEmail}
                 </Link>
               </li>
               

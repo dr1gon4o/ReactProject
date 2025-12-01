@@ -4,14 +4,16 @@
   --bg-card: #1a1d23;
   --neon: #00ffbf;
   --text-main: #e8fdfd;
+  --neon-dark: #00cc99;
+
 }
 
 
 body {
   background: #0d0f12;
   /* background: #a4a4a4; */
-  background: #6d8196;
-  /* background: #2d2d2d; */
+  /* background: #6d8196; */
+  background: #2d2d2d;
   color: var(--text-main);
   font-family: Arial, sans-serif;
 }
@@ -54,7 +56,7 @@ a {
 .neon-btn {
   background: rgba(0,255,191,0.18);
   border: 2px solid var(--neon);
-  color: var(--neon);
+  color: var(--neon-dark);
   padding: 8px 18px;
   border-radius: 8px;
   font-weight: 600;
@@ -62,7 +64,7 @@ a {
 }
 
 .neon-btn:hover {
-  background: var(--neon);
+  background: var(--neon-dark);
   color: #000;
   transform: scale(1.04);
   box-shadow: 0 0 20px var(--neon);
@@ -104,4 +106,10 @@ footer {
   box-shadow: 0 0 12px rgba(255, 0, 72, 0.5);
   background: #111418;
   /* unicode-bidi: isolate; */
+}
+
+.gistrong-icon {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
 }

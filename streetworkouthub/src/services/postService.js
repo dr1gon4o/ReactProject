@@ -3,7 +3,6 @@ const baseUrl = "http://localhost:3030/data/posts";
 export async function getAll() {
   const res = await fetch(`${baseUrl}?sortBy=_createdOn%20desc`);
   if (!res.ok) {
-    // Return an empty array if the collection doesn't exist or fetch fails
     return [];
   }
   return res.json();
