@@ -46,8 +46,8 @@ const express = require("express");
 const cors = require("cors");
 
 // Import your existing backend logic
-const { loginUser, registerUser, logoutUser } = require("./server"); // adjust the path to your actual server code
-const { getAllPosts, getPostById, createPost, updatePost, deletePost } = require("./server"); // your post logic
+const { loginUser, registerUser, logoutUser } = require("../server/server"); // adjust the path to your actual server code
+const { getAllPosts, getPostById, createPost, updatePost, deletePost } = require("../server/server"); // your post logic
 
 const app = express();
 app.use(cors());
