@@ -1,4 +1,4 @@
-const baseUrl = "/api/data/posts";
+const baseUrl = "http://localhost:3030/data/posts";
 
 export async function getAll() {
   const res = await fetch(`${baseUrl}?sortBy=_createdOn%20desc`);
