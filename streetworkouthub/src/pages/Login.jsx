@@ -20,7 +20,7 @@ export default function Login() {
 
     try {
       await login(email, password);
-      navigate("/");
+      navigate("/profile");
     } catch (err) {
       setError(err.message);
     }

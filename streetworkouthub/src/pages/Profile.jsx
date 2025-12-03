@@ -4,7 +4,7 @@ import * as postService from "../services/postService";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function Profile() {
-  const { _id } = useAuth();
+  const { _id,   username,  email } = useAuth();
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Profile() {
 
   return (
     <div className="fade-in">
-      <h2 className="text-center mb-3">My Posts</h2>
+      <h2 className="text-center mb-3">{username}'s Posts</h2>
       <hr />
       {posts.length === 0 && <p className="text-center">No posts yet.</p>}
 

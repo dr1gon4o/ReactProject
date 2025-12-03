@@ -1,5 +1,7 @@
 import WeatherWidget from "../components/WeatherWidget";
 import { GiStrong } from "react-icons/gi";
+import { Link } from "react-router-dom";
+
 
 export default function Home() {
   return (
@@ -7,9 +9,10 @@ export default function Home() {
       <h1 className="text-danger fw-bold mb-4">
         Unlock Your Potential  
         <br />
-        <>
-        <GiStrong className="gistrong-icon neon-btn"/> 
-        </>
+       <Link to="/profile" >
+          <GiStrong className="gistrong-icon neon-btn" />
+        </Link>
+
       </h1>
       <p className="text-white">Train anywhere. Push your limits.</p>
 

@@ -11,11 +11,37 @@ export default function Register() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
+    const username = formData.get("username");
     const password = formData.get("password");
+    const confirmPassword = formData.get("confirmPassword");
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    if (!email || !password) {
+      setError("Fields cannot be empty");
+      return;
+    }
+
+    // if (password.length < 6) {
+    //   setError("Password must be at least 6 characters long");
+    //   return;
+    // }
+
+    // if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    //   setError("Please enter a valid email address");
+    //   return;
+    // }
+
+
+    // setError("");
+
 
     try {
-      await register(email, password);
-      navigate("/");
+      await register(email, username, password);
+      navigate("/welcome");
     } catch (err) {
       setError(err.message);
     }
@@ -28,7 +54,9 @@ export default function Register() {
       {error && <p className="text-danger">{error}</p>}
 
       <input className="form-control mb-2" name="email" type="email" placeholder="Email" />
-      <input className="form-control mb-3" name="password" type="password" placeholder="Password" />
+      <input className="form-control mb-2" name="username" type="username" placeholder="Username" />
+      <input className="form-control mb-2" name="password" type="password" placeholder="Password" />
+      <input className="form-control mb-3" name="confirmPassword" type="password" placeholder="Confirm Password" />
 
       <button className="neon-btn w-100">Register</button>
     </form>

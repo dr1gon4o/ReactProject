@@ -28,12 +28,12 @@ export function AuthProvider({ children }) {
     setAuth(data);
     localStorage.setItem("user", JSON.stringify(data));
   }
-
-  async function register(email, password) {
+ 
+  async function register(email, username, password) {
     const res = await fetch(`${baseUrl}/users/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, username, password }),
     });
 
     const data = await res.json();
