@@ -25,6 +25,8 @@ export default function Details() {
       <h2>{post.title}</h2>
       <p>{post.type}</p>
       <p>{post.description}</p>
+       <p className="text-danger">Posted by {post.authorUsername}</p>
+
 
       {isOwner && (
         <div className="d-flex gap-3 justify-content-center">

@@ -24,6 +24,7 @@ export default function Profile() {
           <div key={p._id} className="col-md-4">
             <div className="card h-100">
               <h5>{p.title}</h5>
+              <p className="text-danger">Posted by {p.authorUsername}</p>
               <Link className="neon-btn mt-auto" to={`/posts/${p._id}`}>
                 View
               </Link>

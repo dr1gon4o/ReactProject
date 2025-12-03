@@ -3,7 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import * as postService from "../services/postService";
 
 export default function CreatePost() {
-  const { accessToken } = useAuth();
+  const { accessToken, username } = useAuth();
   const navigate = useNavigate();
 
   async function onSubmit(e) {
@@ -14,6 +14,8 @@ export default function CreatePost() {
       title: fd.get("title"),
       type: fd.get("type"),
       description: fd.get("description"),
+      authorUsername: username,
+
     };
 
     await postService.createPost(data, accessToken);

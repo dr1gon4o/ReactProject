@@ -39,8 +39,8 @@ export function AuthProvider({ children }) {
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || "Registration failed");
 
-    setAuth(data);
-    localStorage.setItem("user", JSON.stringify(data));
+    setAuth(data, username);
+    localStorage.setItem("user", JSON.stringify(data, username));
   }
 
   async function logout() {

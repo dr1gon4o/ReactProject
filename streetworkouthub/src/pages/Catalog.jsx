@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as postService from "../services/postService";
 
+
 export default function Catalog() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,7 @@ export default function Catalog() {
           <div className="card h-100 text-center">
             <h5 className="mt-2">{post.title}</h5>
             <p>{post.type}</p>
+            <p className="text-danger">Posted by {post.authorUsername}</p>
             <Link className="neon-btn mt-auto" to={`/posts/${post._id}`}>
               Details
             </Link>
