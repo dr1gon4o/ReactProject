@@ -113,3 +113,54 @@ footer {
   width: 100px;
   height: 100px;
 }
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.rgb {
+  --angle: 0deg;
+  position: relative;
+  padding: 30px;
+  border-radius: 10px;
+  /* background-color: #1a1a1a; */
+  background-color: #1a1d23;
+  color: white;
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+  z-index: 0;
+}
+
+.rgb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    red,
+    yellow,
+    lime,
+    aqua,
+    blue,
+    magenta,
+    red
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: rotate-border 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate-border {
+  to {
+    --angle: 360deg;
+  }
+}

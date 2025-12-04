@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="text-center mt-5">
-      <h1 className="text-danger fw-bold mb-4">
+      <h1 className="text-danger fw-bold mb-4 rgb">
         Unlock Your Potential  
         <br />
        <Link to="/profile" >
