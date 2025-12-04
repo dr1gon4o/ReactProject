@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as postService from "../services/postService";
 import { useAuth } from "../contexts/AuthContext";
+import { FaUser } from "react-icons/fa";
+
 
 export default function Profile() {
   const { _id,   username,  email } = useAuth();
@@ -24,7 +26,13 @@ export default function Profile() {
           <div key={p._id} className="col-md-4">
             <div className="card h-100">
               <h5>{p.title}</h5>
-              <p className="text-danger">Posted by {p.authorUsername}</p>
+
+            <small className="d-flex gap-1 align-items-center text-danger">
+              <FaUser /><strong>{p.authorUsername}</strong>
+            </small>
+
+            <br />
+
               <Link className="neon-btn mt-auto" to={`/posts/${p._id}`}>
                 View
               </Link>

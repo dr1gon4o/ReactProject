@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import * as postService from "../services/postService";
+import { FaUser } from "react-icons/fa";
 
 export default function Details() {
   const { id } = useParams();
@@ -25,9 +26,10 @@ export default function Details() {
       <h2>{post.title}</h2>
       <p>{post.type}</p>
       <p>{post.description}</p>
-       <p className="text-danger">Posted by {post.authorUsername}</p>
-
-
+      {/* <p className="text-danger">Posted by {post.authorUsername}</p> */}
+      <small className="d-flex gap-1 align-items-center text-danger">
+            <FaUser /><strong>{post.authorUsername}</strong>
+          </small>
       {isOwner && (
         <div className="d-flex gap-3 justify-content-center">
           <Link className="neon-btn" to={`/edit/${id}`}>Edit</Link>
