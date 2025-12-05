@@ -99,6 +99,13 @@ footer {
   box-shadow: 0 0 12px rgba(255, 0, 72, 0.5);
   background: #1a1d23;
   /* unicode-bidi: isolate; */
+    /* position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #111418;
+  color: white;
+  padding: 1rem; */
 }
 
 .navbar {
@@ -163,4 +170,14 @@ footer {
   to {
     --angle: 360deg;
   }
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }

@@ -19,6 +19,7 @@ import PublicRoute from "./components/PublicRoute";
 function App() {
   return (
     <AuthProvider>
+      <div id="app">
       <Header />
       <main className="container mt-4 mb-5 fade-in">
         <Routes>
@@ -86,6 +87,7 @@ function App() {
 
       </main>
       <Footer />
+      </div>
     </AuthProvider>
   );
 }
