@@ -11,6 +11,7 @@ import EditPost from "./pages/EditPost";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Welcome from "./pages/Welcome";
+import ChatPage from "./pages/ChatPage";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
@@ -23,7 +24,7 @@ function App() {
       <Header />
       <main className="container mt-4 mb-5 fade-in">
         <Routes>
-          {/* Public */}
+
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/posts/:id" element={<Details />} />
@@ -81,6 +82,16 @@ function App() {
               </PrivateRoute>
             }
           />
+
+          <Route
+            path="/chat"
+            element={
+              <PublicRoute>
+                <ChatPage />
+              </PublicRoute>
+            }
+          />
+
 
           <Route path="*" element={<NotFound />} />
         </Routes>
