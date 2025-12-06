@@ -11,7 +11,7 @@ import EditPost from "./pages/EditPost";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Welcome from "./pages/Welcome";
-import ChatPage from "./pages/ChatPage";
+import About from "./pages/about";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
@@ -82,16 +82,15 @@ function App() {
               </PrivateRoute>
             }
           />
-
+        
           <Route
-            path="/chat"
-            element={
-              <PublicRoute>
-                <ChatPage />
-              </PublicRoute>
-            }
-          />
-
+              path="/about"
+              element={
+                <PublicRoute>
+                  <About />
+                </PublicRoute>
+              }
+            />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
