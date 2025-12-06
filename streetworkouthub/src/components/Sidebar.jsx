@@ -1,0 +1,26 @@
+import { Link } from "react-router-dom";
+import '../styles/Sidebar.css';
+import { FaCloudSun, FaRobot, FaRegEnvelope, FaInfoCircle, FaSearch } from "react-icons/fa";
+
+export default function Sidebar() {
+  return (
+    <div className="sidebar">
+      <Link to="/search" className="sidebar-item">
+        <FaSearch className="icon" /> <span>Search</span>
+      </Link>
+      <Link to="/Aichat" className="sidebar-item">
+        <FaRobot className="icon" /> <span>AI</span>
+      </Link>
+      <Link to="/weather" className="sidebar-item">
+        <FaCloudSun className="icon" /> <span>Weather</span>
+      </Link>
+      <Link to="/About" className="sidebar-item">
+        <FaInfoCircle className="icon" /> <span>About</span>
+      </Link>
+      <Link to="/Contact" className="sidebar-item">
+        <FaRegEnvelope className="icon" /> <span>Contact</span>
+      </Link>
+      
+    </div>
+  );
+}

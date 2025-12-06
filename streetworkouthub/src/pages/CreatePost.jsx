@@ -23,7 +23,7 @@ export default function CreatePost() {
   }
 
   return (
-    <form className="card mx-auto col-md-5 accent-box fade-in" onSubmit={onSubmit}>
+    <form className="card bg-dark mx-auto col-md-5 accent-box fade-in" onSubmit={onSubmit}>
       <h2 className="text-center mb-3">Create Post</h2>
 
       <input className="form-control mb-2" name="title" placeholder="Title" />

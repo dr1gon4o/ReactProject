@@ -1,6 +1,6 @@
 
 :root {
-  --bg-dark: #111418;
+  /* --bg-dark: #111418; */
   --bg-card: #1a1d23;
   --neon: #00ffbf;
   --text-main: #e8fdfd;
@@ -74,7 +74,7 @@ a {
   /* background-color: #111; */
   background: var(--bg-card);
   color: #fff;
-  border: 1px solid #e63946;
+  border: 1px solid rgba(255, 0, 72, 0.8);
   /* border: 1px solid rgba(-0,255,191,0.4); */
   border-radius: 10px;
   padding: 12px;
@@ -97,7 +97,7 @@ a {
 footer {
   border-top: 2px solid rgba(-0,255,191,0.4);
   box-shadow: 0 0 12px rgba(255, 0, 72, 0.5);
-  background: #1a1d23;
+  /* background: #1a1d23; */
   /* unicode-bidi: isolate; */
     /* position: fixed;
   bottom: 0;
@@ -180,4 +180,8 @@ footer {
 
 main {
   flex: 1;
+}
+
+.text-neon {
+  color: var(--neon);
 }

@@ -11,7 +11,9 @@ import EditPost from "./pages/EditPost";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Welcome from "./pages/Welcome";
-import About from "./pages/about";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Sidebar from "./components/Sidebar";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
@@ -22,6 +24,8 @@ function App() {
     <AuthProvider>
       <div id="app">
       <Header />
+      <Sidebar className="header-style" />
+      {/* <Sidebar className="card-style" />   */}
       <main className="container mt-4 mb-5 fade-in">
         <Routes>
 
@@ -82,15 +86,12 @@ function App() {
               </PrivateRoute>
             }
           />
-        
-          <Route
-              path="/about"
-              element={
-                <PublicRoute>
-                  <About />
-                </PublicRoute>
-              }
-            />
+
+          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+
+          <Route path="/about" element={<About />}/>
+
+          <Route path="/contact" element={<Contact />}/>
 
           <Route path="*" element={<NotFound />} />
         </Routes>
