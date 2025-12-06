@@ -1,11 +1,11 @@
-import WeatherWidget from "../components/WeatherWidget";
+// import WeatherWidget2 from "../components/WeatherWidget2";
 import { GiStrong } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 
 export default function Home() {
   return (
-    <div className="text-center mt-5">
+    <div className="text-center mt-4">
       <h1 className="text-danger fw-bold mb-4 rgb">
         Unlock Your Potential  
         <br />
@@ -16,9 +16,9 @@ export default function Home() {
       </h1>
       <p className="text-white">Train anywhere. Push your limits.</p>
 
-      <div className="d-flex justify-content-center mt-4">
-        <WeatherWidget />
-      </div>
+      {/* <div className="d-flex justify-content-center mt-4">
+        <WeatherWidget2 />
+      </div> */}
     </div>
   );
 }

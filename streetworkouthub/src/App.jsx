@@ -14,6 +14,11 @@ import Welcome from "./pages/Welcome";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Sidebar from "./components/Sidebar";
+import Weather from "./pages/Weather";
+import Aichat from "./pages/Aichat";
+import Search from "./pages/Search";
+import Maps from "./pages/Maps";
+import Calendar from "./pages/Calendar";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
@@ -87,7 +92,15 @@ function App() {
             }
           />
 
-          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+          <Route path="/search" element={<Search />} />
+
+          <Route path="/aichat" element={<Aichat />} />
+
+          <Route path="/weather" element={<Weather />} />
+
+          <Route path="/maps" element={<Maps />} />
+
+          <Route path="/calendar" element={<Calendar />} />
 
           <Route path="/about" element={<About />}/>
 
