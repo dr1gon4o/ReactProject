@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../styles/Sidebar.css';
+import '../styles/sidebar.css';
 import { FaCloudSun, FaRobot, FaRegEnvelope, FaInfoCircle, FaSearch } from "react-icons/fa";
 
 export default function Sidebar() {
