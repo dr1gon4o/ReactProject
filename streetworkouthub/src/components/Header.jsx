@@ -17,7 +17,7 @@ export default function Header() {
           
           <li className="nav-item ">
             <Link className="nav-link d-flex align-items-center" to="/catalog">
-            <FaFire className="me-1 text-danger " />Catalog
+            <FaFire className="me-1 text-danger " />Workout Catalog
             </Link>
           </li>
 

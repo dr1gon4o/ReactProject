@@ -27,8 +27,11 @@ Uses a backend server from SoftUni Practice Server and includes a small weather 
 - **React Router**
 - **Bootstrap**
 - **SoftUni Practice Server**
-- **Open-Meteo API** (free weather data)
+- **Open-Meteo API**
 - **React Icons**
+- **Github Actions**
+- **Firebase Hosting**
+- **Render Deployment**
 
 ---
 
@@ -37,10 +40,10 @@ Uses a backend server from SoftUni Practice Server and includes a small weather 
 ```sh
 npm install
 
-# Run SoftUni Practice Server
+# Run SoftUni Practice (Server)
 node server.js
 
-# Run steetworkouthub (client)
+# Run steetworkouthub (Client)
 npm run dev
 
 # Run tests
