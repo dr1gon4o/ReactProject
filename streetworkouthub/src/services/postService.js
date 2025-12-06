@@ -1,5 +1,5 @@
-const baseUrl = "http://localhost:3030/data/posts";
-// const baseUrl = "https://reactproject-rmwu.onrender.com/data/posts";
+// const baseUrl = "http://localhost:3030/data/posts";
+const baseUrl = "https://reactproject-rmwu.onrender.com/data/posts";
 
 export async function getAll() {
   const res = await fetch(`${baseUrl}?sortBy=_createdOn%20desc`);
