@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-export default function InteractiveAIChat() {
+export default function AichatWidget() {
   const [messages, setMessages] = useState([
-    { role: 'model', content: 'Hello! I am a free AI assistant. How can I help you today?' },
+    { role: 'model', content: 'Hello! I am your AI Coach. How can I help you today?' },
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
