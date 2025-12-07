@@ -1,8 +1,8 @@
-import AichatWidget from "../components/AichatWidget";
+import AichatWidget from "../components/Aichatwidget";
 
 export default function Aichat() {
   return (
-      <div className="d-flex justify-content-center">
+      <div className="rgb d-flex justify-content-center">
         <AichatWidget />
       </div>
   );

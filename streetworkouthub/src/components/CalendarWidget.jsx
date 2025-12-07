@@ -3,8 +3,7 @@ import "react-calendar/dist/Calendar.css";
 
 export default function CalendarWidget() {
   return (
-    <div className="p-3 border border-success rounded" style={{ width: "280px" }}>
-      <h6 className="text-success">Workout Calendar</h6>
+    <div className="rgb text-center fs-6">
       <Calendar />
     </div>
   );

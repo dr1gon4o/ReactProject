@@ -51,10 +51,9 @@ export default function AichatWidget() {
     }
   };
 
-  // Basic inline styling provided here to prevent errors if you don't have a CSS file
   return (
-    <div style={{ padding: '20px', border: '1px solid #ccc', maxWidth: '600px', margin: 'auto' }}>
-      <div style={{ height: '300px', overflowY: 'auto', marginBottom: '10px', border: '1px solid #eee', padding: '10px' }}>
+    <div style={{ padding: '20px', maxWidth: '100%', margin: 'auto' }}>
+      <div style={{ height: '300px', overflowY: 'auto', marginBottom: '10px' }}>
         {messages.map((msg, index) => (
           <div key={index} style={{ marginBottom: '5px', color: msg.role === 'user' ? 'blue' : 'green' }}>
             <strong>{msg.role === 'user' ? 'You' : 'AI'}:</strong> {msg.content}
