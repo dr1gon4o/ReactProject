@@ -1,4 +1,4 @@
-import AichatWidget from "../components/Aichatwidget";
+import AichatWidget from "../components/AichatWidget";
 
 export default function Aichat() {
   return (

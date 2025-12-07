@@ -18,7 +18,6 @@ export default function AichatWidget() {
     setIsLoading(true);
     setError(null);
 
-    // Use YOUR existing backend base URL and the correct path for your chat endpoint
     const endpoint = `http://localhost:3030/ai`; 
 
     const requestBody = {
@@ -38,7 +37,6 @@ export default function AichatWidget() {
 
       const data = await response.json();
       
-      // Change 'replyText' if your server uses a different key (e.g., data.message)
       const aiText = data.replyText || "Sorry, I couldn't get a response.";
       
       const aiMessage = { role: 'model', content: aiText };
