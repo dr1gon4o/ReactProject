@@ -30,7 +30,6 @@ function App() {
       <div id="app">
       <Header />
       <Sidebar className="header-style" />
-      {/* <Sidebar className="card-style" />   */}
       <main className="container mt-4 mb-5 fade-in">
         <Routes>
 
@@ -94,7 +93,14 @@ function App() {
 
           <Route path="/search" element={<Search />} />
 
-          <Route path="/aichat" element={<Aichat />} />
+          <Route 
+            path="/aichat" 
+            element={
+              <PrivateRoute>
+                <Aichat />
+                </PrivateRoute>
+            } 
+          />
 
           <Route path="/weather" element={<Weather />} />
 

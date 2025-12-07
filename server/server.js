@@ -1,3 +1,30 @@
+// dobaveno ot men
+function loadEnv() {
+    const fs = require('fs');
+    const path = require('path');
+    
+    const envPath = path.join(__dirname, '.env');
+    if (fs.existsSync(envPath)) {
+        const envContent = fs.readFileSync(envPath, 'utf8');
+        envContent.split('\n').forEach(line => {
+            const [key, ...valueParts] = line.split('=');
+            if (key && valueParts.length > 0) {
+                const value = valueParts.join('=').trim();
+                if (value) {
+                    process.env[key.trim()] = value.replace(/^["']|["']$/g, '');
+                }
+            }
+        });
+        console.log(".env file loaded");
+    } else {
+        console.log("No .env file found");
+    }
+}
+loadEnv();
+
+const ai = require("./ai.js");
+// dobaveno ot men do tuk
+
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('http'), require('fs'), require('crypto')) :
     typeof define === 'function' && define.amd ? define(['http', 'fs', 'crypto'], factory) :
@@ -803,13 +830,15 @@
 
     var util$1 = utilService.parseRequest;
 
+    
     var services = {
         jsonstore,
         users,
         data: data$1,
         favicon,
         admin,
-        util: util$1
+        util: util$1,
+        ai    //dobaveno ot men
     };
 
     const { uuid: uuid$2 } = util;
