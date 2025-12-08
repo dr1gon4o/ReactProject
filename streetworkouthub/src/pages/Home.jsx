@@ -1,6 +1,7 @@
 // import WeatherWidget2 from "../components/WeatherWidget2";
 import { GiStrong } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { FaDumbbell, FaRobot } from "react-icons/fa";
 
 
 export default function Home() {
@@ -14,7 +15,18 @@ export default function Home() {
         </Link>
 
       </h1>
-      <p className="text-white">Train anywhere. Push your limits.</p>
+
+      <p className="text-white">
+        <FaDumbbell size={35}/>
+        ...Train anywhere. Push your limits...
+        <FaDumbbell size={35}/>
+      </p>
+        
+      <p>
+        <FaRobot size={35} />
+      ...Log in to get personalized guidance from our AI Coach...
+        <FaRobot size={35} />
+      </p>
 
       {/* <div className="d-flex justify-content-center mt-4">
         <WeatherWidget2 />

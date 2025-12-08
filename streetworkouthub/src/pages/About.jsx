@@ -9,10 +9,21 @@ export default function About() {
           using their own bodyweight — anytime, anywhere. Our goal is to help
           people share routines, learn new skills, and stay motivated.
         </p>
-
         <p>
-          This platform allows you to create posts, explore other athletes'
-          journeys, and connect with a growing street workout community.
+          Now, we're taking it further with your AI Coach — a smart training companion that gives personalized guidance, tailored workout suggestions, and motivational support whenever you need it.
+
+        </p>
+        <p>
+          This platform allows you to:
+          <br />
+          - Create posts and share your progress
+          <br />
+          - Explore other athletes' journeys
+          <br />
+          - Connect with a growing street workout community
+          <br />
+          - Get customized advice from the AI Coach to push past plateaus and reach your goals
+
         </p>
 
         <p>
