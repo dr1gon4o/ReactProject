@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import * as postService from "../services/postService";
+import * as ratingService from "../services/ratingService";
 import SearchBar from "../components/Searchbar";
+import { FaStar } from "react-icons/fa";
+
 
 export default function Search() {
   const [posts, setPosts] = useState([]);
@@ -41,6 +44,36 @@ export default function Search() {
     setFiltered(results);
   }
 
+  const [ratingsMap, setRatingsMap] = useState({});
+    useEffect(() => {
+      if (posts.length === 0) return;
+  
+      async function loadRatings() {
+        const results = await Promise.all(
+          posts.map((p) => ratingService.getRatings(p._id))
+        );
+  
+        const map = {};
+  
+        posts.forEach((post, i) => {
+          const r = results[i];
+  
+          if (r.length > 0) {
+            const avg =
+              r.reduce((sum, x) => sum + x.rating, 0) / r.length;
+            map[post._id] = Number(avg.toFixed(1));
+          } else {
+            map[post._id] = null;
+          }
+        });
+  
+        setRatingsMap(map);
+      }
+  
+      loadRatings();
+    }, [posts]);
+
+
   return (
     <div >
       <h2 className="text-center text-neon mb-4">My Search Posts</h2>
@@ -59,10 +92,13 @@ export default function Search() {
         {filtered.map((post) => (
           <div key={post._id} className="col-md-4 mb-3">
             <div className="card p-3 bg-dark text-light">
-              <h3>{post.title}</h3>
+              <h3>Title: {post.title}</h3>
               <p><strong>Type:</strong> {post.type}</p>
               <p><strong>Author:</strong> {post.authorUsername}</p>
-              <p>{post.description}</p>
+              <p>Desctiption: {post.description}</p>
+              <span className="text-warning d-flex align-items-center gap-1 ms-2 fw-bold">
+                <FaStar /> {ratingsMap[post._id] ?? "-.-"}
+              </span>
             </div>
           </div>
         ))}

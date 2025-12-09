@@ -27,7 +27,7 @@ export default function Catalog() {
       .finally(() => setLoading(false));
   }, []);
 
-  
+
   useEffect(() => {
     if (posts.length === 0) return;
 
@@ -77,40 +77,19 @@ export default function Catalog() {
               <h5 className="mt-2">{post.title}</h5>
               <p>{post.type}</p>
 
-              {/* <small className="d-flex gap-1 align-items-center justify-content-center text-danger">
-                <FaUser />
-                <strong>{post.authorUsername}</strong>
-              </small> */}
-
-              {/* ⭐ Read-only Rating Display */}
-              {/* <div className="d-flex justify-content-center mb-2">
-                <StarRating rating={ratingsMap[post._id] || 0} readOnly />
-                <span className="text-warning ms-2 fw-bold">
-                  {ratingsMap[post._id] ? ratingsMap[post._id].toFixed(1) : "--"}
-                </span>
-              </div> */}
-
               <div className="d-flex align-items-center justify-content-between">
-                      <small className="d-flex gap-1 align-items-center text-danger">
-                        <FaUser />
-                        <strong>{post.authorUsername}</strong>
-                      </small>
-              
-                      <div className="d-flex align-items-center gap-2">
-                      
-                          <span className="text-warning d-flex align-items-center gap-1 ms-2 fw-bold">
-                            <FaStar /> {ratingsMap[post._id] ? ratingsMap[post._id].toFixed(1) : "-.-"}
-                          </span>
-                        
-                        {/* <StarRating rating={ratingsMap[post._id] || 0} readOnly />
-                          <span className="text-warning ms-2 fw-bold">✯
-                            {ratingsMap[post._id] ? ratingsMap[post._id].toFixed(1) : "--"}
-                          </span> */}
-                        {/* <span className="text-warning" style={{ fontWeight: "bold" }}>
-                          {average !== "No ratings yet" ? `${average}` : "--"}
-                        </span> */}
-                      </div>
-                    </div>
+                <small className="d-flex gap-1 align-items-center text-danger">
+                  <FaUser />
+                  <strong>{post.authorUsername}</strong>
+                </small>
+        
+                <div className="d-flex align-items-center gap-2">                    
+                  <span className="text-warning d-flex align-items-center gap-1 ms-2 fw-bold">
+                    <FaStar /> {ratingsMap[post._id] ? ratingsMap[post._id].toFixed(1) : "-.-"}
+                  </span>
+                
+                </div>
+              </div>
 
               <Link className="neon-btn mt-auto" to={`/posts/${post._id}`}>
                 Details

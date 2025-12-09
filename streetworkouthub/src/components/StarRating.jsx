@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaStar } from "react-icons/fa";
 
 export default function StarRating({ rating, disabled, onRate }) {
   const [hover, setHover] = useState(0);
@@ -9,7 +10,7 @@ export default function StarRating({ rating, disabled, onRate }) {
         <span
           key={star}
           style={{
-            fontSize: "28px",
+            fontSize: "20px",
             cursor: disabled ? "default" : "pointer",
             color: star <= (hover || rating) ? "#f5c518" : "#888",
             transition: "0.2s",
@@ -18,7 +19,7 @@ export default function StarRating({ rating, disabled, onRate }) {
           onMouseLeave={() => !disabled && setHover(0)}
           onClick={() => !disabled && onRate(star)}
         >
-          ✯
+          <FaStar /> 
         </span>
       ))}
     </div>

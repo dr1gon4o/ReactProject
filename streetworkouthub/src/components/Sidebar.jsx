@@ -10,14 +10,14 @@ export default function Sidebar() {
       <Link to="/Search" className="sidebar-item">
         <FaSearch className="icon" /> <span>Search</span>
       </Link>
+      
       {isAuthenticated && (
         <Link to="/Aichat" className="sidebar-item">
-          <FaRobot className="icon" /> <span>AI</span>
+          <FaRobot className="icon" /> <span>AI Coach</span>
         </Link>
         )     
       }
       
-
       <Link to="/Weather" className="sidebar-item">
         <FaCloudSun className="icon" /> <span>Weather</span>
       </Link>

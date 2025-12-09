@@ -66,12 +66,12 @@ export default function Details() {
         </small>
 
         <div className="d-flex align-items-center gap-2">
-          <StarRating
+          <StarRating className="pb-4"
             rating={userRating || (average === "No ratings yet" ? 0 : Number(average))}
             onRate={handleRate}
           />
-          <span className="text-warning" style={{ fontWeight: "bold" }}>
-            {average !== "No ratings yet" ? `${average}` : "--"}
+          <span className="text-warning fw-bold pt-1">
+            {average !== "No ratings yet" ? `${average}` : "-.-"}
           </span>
         </div>
       </div>
