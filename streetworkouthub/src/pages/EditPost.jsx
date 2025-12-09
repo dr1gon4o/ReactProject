@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import * as postService from "../services/postService";
+import ConfirmModal from "../components/ConfirmModal";
 
 export default function EditPost() {
   const { accessToken } = useAuth();
@@ -9,25 +10,35 @@ export default function EditPost() {
   const navigate = useNavigate();
   const [post, setPost] = useState({});
 
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [formData, setFormData] = useState(null);
+
   useEffect(() => {
     postService.getOne(id).then(setPost);
   }, [id]);
 
   async function onSubmit(e) {
     e.preventDefault();
+  
     const fd = new FormData(e.currentTarget);
 
-    const data = {
+    setFormData({
       title: fd.get("title"),
       type: fd.get("type"),
       description: fd.get("description"),
-    };
+      authorUsername: post.authorUsername,
+    });
 
-    await postService.updatePost(id, data, accessToken);
+    setShowConfirm(true);
+  }
+
+  async function confirmUpdate() {
+    await postService.updatePost(id, formData, accessToken);
     navigate(`/posts/${id}`);
   }
 
   return (
+    <>
     <form className="mx-auto col-md-5 accent-box fade-in" onSubmit={onSubmit}>
       <h2 className="text-center mb-3">Edit Post</h2>
 
@@ -37,5 +48,13 @@ export default function EditPost() {
 
       <button className="neon-btn w-100">Save</button>
     </form>
+
+     <ConfirmModal
+        show={showConfirm}
+        message="Are you sure you want to save changes to this post?"
+        onConfirm={confirmUpdate}
+        onCancel={() => setShowConfirm(false)}
+      />
+    </>
   );
 }

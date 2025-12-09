@@ -7,13 +7,17 @@ export default function Contact() {
     message: ""
   });
 
+  const [successMessage, setSuccessMessage] = useState("");
+
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert("Message sent! Thank you for reaching out.");
+    setSuccessMessage("✅ Message sent! Thank you for reaching out.");
+    setForm({ name: "", email: "", message: "" });
+    setTimeout(() => setSuccessMessage(""), 10000);
   }
 
   return (
@@ -25,6 +29,8 @@ export default function Contact() {
           Have questions, feedback, or collaboration ideas? We'd love to hear from you!
         </p>
 
+        {successMessage && <p className="text-success fw-bold mb-3">{successMessage}</p>}
+        
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label text-neon">Your Name</label>

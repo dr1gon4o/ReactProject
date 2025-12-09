@@ -5,6 +5,8 @@ import * as postService from "../services/postService";
 import * as ratingService from "../services/ratingService";
 import StarRating from "../components/StarRating";
 import { FaUser } from "react-icons/fa";
+import ConfirmModal from "../components/ConfirmModal";
+
 
 export default function Details() {
   const { id } = useParams();
@@ -15,6 +17,8 @@ export default function Details() {
   const [ratings, setRatings] = useState([]);
   const [userRating, setUserRating] = useState(0);
   const [showWarning, setShowWarning] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
+
 
   useEffect(() => {
     postService.getOne(id).then(setPost);
@@ -33,6 +37,9 @@ export default function Details() {
 
   const isOwner = post._ownerId === userId;
 
+  function requestDelete() {
+    setShowDelete(true);
+  }
   async function onDelete() {
     await postService.deletePost(id, accessToken);
     navigate("/catalog");
@@ -54,6 +61,7 @@ export default function Details() {
       : "No ratings yet";
 
   return (
+    <>
     <div className="card mx-auto col-md-6 fade-in">
       <h2>{post.title}</h2>
       <p>{post.type}</p>
@@ -87,9 +95,16 @@ export default function Details() {
       {isOwner && (
         <div className="d-flex gap-3 justify-content-center mt-3">
           <Link className="neon-btn" to={`/edit/${id}`}>Edit</Link>
-          <button className="neon-btn" onClick={onDelete}>Delete</button>
+          <button className="neon-btn" onClick={requestDelete}>Delete</button>
         </div>
       )}
     </div>
+    <ConfirmModal
+        show={showDelete}
+        message="Are you sure you want to delete this post?"
+        onConfirm={onDelete}
+        onCancel={() => setShowDelete(false)}
+      />
+    </>
   );
 }

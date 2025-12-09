@@ -61,7 +61,7 @@ export default function AichatWidget() {
         {error && <div style={{ color: 'red' }}>Error: {error}</div>}
       </div>
       <form onSubmit={sendMessage} style={{ display: 'flex' }}>
-        <input
+        <input className="neon-btn"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -69,7 +69,7 @@ export default function AichatWidget() {
           disabled={isLoading}
           style={{ flexGrow: 1, padding: '10px' }}
         />
-        <button type="submit" disabled={isLoading} style={{ padding: '10px', marginLeft: '10px' }}>Send</button>
+        <button className="neon-btn" type="submit" disabled={isLoading} style={{ padding: '10px', marginLeft: '10px' }}>Send</button>
       </form>
     </div>
   );
