@@ -3,7 +3,7 @@ import { toggleTheme } from "../store/themeSlice";
 import { useEffect } from "react";
 
 export default function ThemeToggle() {
-  const dim = useSelector((state) => state.theme.neon); // rename for clarity
+  const dim = useSelector((state) => state.theme.neon);
   const dispatch = useDispatch();
 
   useEffect(() => {
