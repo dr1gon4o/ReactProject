@@ -14,6 +14,8 @@ Uses a backend server from SoftUni Practice Server and includes a small weather 
 ✔ Catalog with all posts  
 ✔ Post Details page  
 ✔ Profile page with user’s posts  
+✔ Weather widget (API: Open-Meteo)
+✔ Weather widget (API: Open-Meteo)
 ✔ Weather widget (API: Open-Meteo)  
 ✔ Protected routes for logged-in users  
 ✔ Neon dark UI theme  
@@ -29,6 +31,9 @@ Uses a backend server from SoftUni Practice Server and includes a small weather 
 - **SoftUni Practice Server**
 - **Open-Meteo API**
 - **React Icons**
+- **Google Maps API**
+- **React Calendar**
+- **AI Chat Integration**
 - **Github Actions**
 - **Firebase Hosting**
 - **Render Deployment**

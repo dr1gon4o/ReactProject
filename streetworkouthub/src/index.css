@@ -165,3 +165,18 @@ main {
 .text-neon {
   color: var(--neon);
 }
+
+body.dim-mode  {
+  background: #222 !important;
+  color: #ddd !important;
+}
+
+body.dim-mode .card {
+  background: #333 !important;
+  color: #ddd !important;
+}
+
+body.dim-mode .rgb {
+  background: #333 !important;
+  color: #ddd !important;
+}

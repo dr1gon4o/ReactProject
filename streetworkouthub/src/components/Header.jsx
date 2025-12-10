@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { FaFire, FaDumbbell, FaSignInAlt, FaSignOutAlt, FaUserPlus, FaUser, FaPlusCircle } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const { isAuthenticated, logout } = useAuth();
@@ -57,6 +58,7 @@ export default function Header() {
              </>
           )}
         </ul>
+        <ThemeToggle/>
       </div>
     </nav>
   );

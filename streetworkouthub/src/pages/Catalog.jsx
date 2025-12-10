@@ -2,18 +2,24 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as postService from "../services/postService";
 import * as ratingService from "../services/ratingService";
-import { FaUser } from "react-icons/fa";
-import StarRating from "../components/StarRating";
-import { FaStar } from "react-icons/fa";
+import { FaUser, FaStar } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { startCatalogLoading, stopCatalogLoading } from "../store/loadingSlice";
+import "../styles/loader.css";
 
 
 export default function Catalog() {
   const [posts, setPosts] = useState([]);
   const [ratingsMap, setRatingsMap] = useState({});
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const dispatch = useDispatch();
+  const loading = useSelector(s => s.loading.catalogLoading);
+
   useEffect(() => {
+    dispatch(startCatalogLoading());
+
     postService
       .getAll()
       .then((data) => {
@@ -24,8 +30,8 @@ export default function Catalog() {
         setError("Failed to load posts. No Posts found.");
         setPosts([]);
       })
-      .finally(() => setLoading(false));
-  }, []);
+       .finally(() => dispatch(stopCatalogLoading()));
+  }, [dispatch]);
 
 
   useEffect(() => {
@@ -58,16 +64,19 @@ export default function Catalog() {
 
 
   if (loading) {
-    return <h3>Loading posts...</h3>;
+    return <div class="d-flex flex-column align-items-center gap-3 text-center pt-5">
+              <h3>Loading posts...</h3>
+              <div class="loader" role="status" aria-hidden="true"></div>
+            </div>;
   }
 
   if (error) {
-    return <h3>{error}</h3>;
+    return <h3 className="text-danger text-center pt-5">{error}</h3>;
   }
 
   return (
     <div className="row g-4 fade-in">
-      {posts.length === 0 && <h3>No posts yet!</h3>}
+      {posts.length === 0 && <h3 className="text-center pt-5">No posts yet!</h3>}
 
       {posts.length > 0 &&
         posts.map((post) => (
