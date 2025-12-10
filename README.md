@@ -10,13 +10,10 @@ Uses a backend server from SoftUni Practice Server and includes a small weather 
 ## 🚀 Features
 
 ✔ User Authentication (Login / Register)  
-✔ Create, Edit, Delete Posts (only by owner)  
-✔ Catalog with all posts  
+✔ Create, Edit, Delete Posts (only logged in users)  
+✔ Catalog with all posts (for all users)
 ✔ Post Details page  
 ✔ Profile page with user’s posts  
-✔ Weather widget (API: Open-Meteo)
-✔ Weather widget (API: Open-Meteo)
-✔ Weather widget (API: Open-Meteo)  
 ✔ Protected routes for logged-in users  
 ✔ Neon dark UI theme  
 ✔ Minimal responsive design  
@@ -27,13 +24,15 @@ Uses a backend server from SoftUni Practice Server and includes a small weather 
 
 - **React + Vite**
 - **React Router**
+- **React Redux**
 - **Bootstrap**
+- **React Icons**
 - **SoftUni Practice Server**
 - **Open-Meteo API**
-- **React Icons**
-- **Google Maps API**
+- **Google Maps**
 - **React Calendar**
 - **AI Chat Integration**
+- **Unit Tests**
 - **Github Actions**
 - **Firebase Hosting**
 - **Render Deployment**
@@ -48,7 +47,7 @@ npm install
 # Run SoftUni Practice (Server)
 node server.js
 
-# Run steetworkouthub (Client)
+# Run streetworkouthub (Client)
 npm run dev
 
 # Run tests
