@@ -3,7 +3,7 @@
 # StreetWorkoutHub 🏋️‍♂️🔥
 
 A simple and stylish blog React project for Street Workout athletes — build, share, and explore custom workout posts!  
-Uses a backend server from SoftUni Practice Server and includes a small weather widget.
+Uses a backend server from SoftUni Practice Server and includes AI Chat personal trainer integration.
 
 ---
 
