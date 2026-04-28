@@ -2,6 +2,7 @@ name: Deploy Frontend
 on:
   push:
     branches: [ main ]
+  # workflow_dispatch:
 
 jobs:
   build_and_deploy:
@@ -33,6 +34,7 @@ jobs:
           entryPoint: "./"
       
       - name: Deploy to Firebase LIVE
+        # if: github.event_name == 'workflow_dispatch'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
