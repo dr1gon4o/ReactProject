@@ -18,7 +18,8 @@ export default function AichatWidget() {
     setIsLoading(true);
     setError(null);
 
-    const endpoint = `http://localhost:3030/ai`; 
+    // const endpoint = `http://localhost:3030/ai`; 
+    const endpoint = `https://reactproject-rmwu.onrender.com/ai`;   
 
     const requestBody = {
       message: input, 
